@@ -10,13 +10,28 @@ class Board:
     
     def __init__ (self):
         #self.grid is 2x2 array
-        self.grid=[[0 for j in range(10) ] for i in range(10)]
+        self.grid=[[None for j in range(10) ] for i in range(10)]
    
+    """
+    used to set the given row and col's value
+    """
+    def setValue(self,row,col,value):
+        print(str(row)+","+str(col)+", "+str(value))
+        self.grid[row][col]=value
+    
+    """
+    Simply displays the board
+    """
     def displayBoard(self):
         top=""
         for i in range(0,9):
             for j in range(0,9):
-                top+=str(self.grid[i][j])
+                if self.grid[i][j]==None:
+                    value=" "
+                else:
+                    
+                    value=str(self.grid[i][j])
+                top+=value
                 top+=" "
                 if j==2 or j==5:
                     top+="| "
