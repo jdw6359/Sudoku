@@ -16,8 +16,12 @@ class Board:
     used to set the given row and col's value
     """
     def setValue(self,row,col,value):
-        print(str(row)+","+str(col)+", "+str(value))
+        
         self.grid[row][col]=value
+
+    
+
+
     
     """
     Simply displays the board

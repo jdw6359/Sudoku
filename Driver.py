@@ -1,10 +1,5 @@
-from Board import *
-
-x=Board()
-
-x.displayBoard()
-
 from FileCom import *
 
 y=FileCom()
-y.read("easy1.txt")
+board=y.read("easy1.txt")
+board.displayBoard()

@@ -22,14 +22,17 @@ class FileCom:
         col=0
         for line in config:
             for item in line:
-                if item != ".":
-                    board.setValue(row,col,item)
-                    
-                col+=1
+                if item !="\n":
+                    if item != ".":
+                        board.setValue(row,col,item)
+                    col+=1
+                 
+                
+                
                     
             row+=1
             col=0
-        board.displayBoard()
+        return board
     
             
         
