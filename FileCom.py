@@ -24,7 +24,7 @@ class FileCom:
             for item in line:
                 if item !="\n":
                     if item != ".":
-                        board.setValue(row,col,item)
+                        board.setValue(row,col,int(item))
                     col+=1
                  
                 
