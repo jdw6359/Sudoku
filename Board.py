@@ -16,8 +16,18 @@ class Board:
     used to set the given row and col's value
     """
     def setValue(self,row,col,value):
-        
-        self.grid[row][col]=value
+        if(self.validate(row,col,value)):
+            self.grid[row][col]=value
+        else:
+            print("This is an invalid move!")
+            print("Row: "+str(row+1)+"\nCol: "+str(col+1)+"\nValue: "+str(value))
+
+    """
+    function is called, and will return a True boolean if the
+    given value at the row,col is a valid move
+    """
+    def validate(self,row,col,value):
+       return ((self.horizontal_validation(row,value)==True) and (self.vertical_validation(col,value)==True) and (self.block_validation(row,col,value)==True)) 
 
     """
     given a row and a value, will loop through cols of that row
@@ -25,13 +35,29 @@ class Board:
     bool invalid=true
     """
     def horizontal_validation(self,row,value):
-        invalid=False
+        valid=True
         col=0
         while(col<9):
             if self.grid[row][col]==value:
-                invalid=True
+                valid=False
             col+=1
-        return invalid
+        return valid
+
+    """given a column and a value, will loop through rows of that col
+    and check for matches. If matched, move is invalid and
+    bool invalid=true
+    """
+    def vertical_validation(self,col,value):
+        valid=True
+        row=0
+        while(row<9):
+            if self.grid[row][col]==value:
+                valid=False
+            row+=1
+        return valid
+
+
+    
 
     """given a row, column, and a value this will determine the appropriate
     3x3 block to focus on and check that block for matches. If matched, move
@@ -55,34 +81,20 @@ class Board:
         else:
             col_base=0
         #set row and col count to 0, used to loop
-        invalid=False
+        valid=True
         row_count=0
         col_count=0
         while(row_count<3):
             col_count=0
             while(col_count<3):
                 if(self.grid[row_base+row_count][col_base+col_count]==value):
-                    invalid=True
+                    valid=False
                 col_count+=1
             row_count+=1
-        return invalid
+        return valid
 
 
-    """given a column and a value, will loop through rows of that col
-    and check for matches. If matched, move is invalid and
-    bool invalid=true
-    """
-    def vertical_validation(self,col,value):
-        invalid=False
-        row=0
-        while(row<9):
-            if self.grid[row][col]==value:
-                invalid=True
-            row+=1
-        return invalid
 
-
-    
     """
     Simply displays the board
     """
