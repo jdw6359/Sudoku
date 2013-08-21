@@ -12,9 +12,11 @@ class Sudoku:
 
     #add more variables here that will be used to represent the current game
     def __init__(self):
-        self.reader=FileCom()
+        self.read_write=FileCom()
 
     def configure_board(self,config_file):
         #prompt in future
-        self.board=self.reader.read(config_file)
+        self.cur_file=config_file
+        self.board=self.read_write.read(config_file)
+        
     

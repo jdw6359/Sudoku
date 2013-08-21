@@ -3,7 +3,7 @@ from unittest import *
 
 from TestBasicFunctions import *
 from TestValidationFunctions import *
-from TestFileComFunctions import *
+from TestReaderFunctions import *
 
 
 #initizlize array of suites
@@ -12,7 +12,7 @@ suite_array=[]
 #create a suite for each test file
 suite_array.append(Basic_Functions_Suite())
 suite_array.append(Validation_Functions_Suite())
-suite_array.append(FileCom_Functions_Suite())
+suite_array.append(Reader_Functions_Suite())
 
 
 #run each suite
