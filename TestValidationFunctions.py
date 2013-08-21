@@ -36,11 +36,17 @@ class TestValidationFunctions(unittest.TestCase):
 
     def test_block2(self):
         self.assertFalse(self.board.block_validation(2,2,5))
+
+    def test_validation1(self):
+        self.assertTrue(self.board.validate(2,2,8))
+
+    def test_validation2(self):
+        self.assertFalse(self.board.validate(7,0,7))
         
     
 def Validation_Functions_Suite():
     tests=['test_horizontal1','test_horizontal2','test_vertical1',
-    'test_vertical2','test_block1','test_block2']
+    'test_vertical2','test_block1','test_block2','test_validation1','test_validation2']
     return unittest.TestSuite(map(TestValidationFunctions,tests))
 
 if __name__=='__main__':
