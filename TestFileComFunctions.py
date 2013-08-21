@@ -6,13 +6,15 @@ Date: 8/21/13
 
 import unittest
 
-from FileCom import *
+from Sudoku import *
 
 class TestFileComFunctions(unittest.TestCase):
 
     def setUp(self):
-        self.com=FileCom()
+        sudoku=Sudoku()
         board_path="test_boards/test1.txt"
+        sudoku.configure_board(board_path)
+        self.board=sudoku.board
 
     def test_valueSet1(self):
         self.assertEqual(9,self.board.grid[0][0])
