@@ -26,10 +26,6 @@ class FileCom:
                     if item != ".":
                         board.setValue(row,col,int(item))
                     col+=1
-                 
-                
-                
-                    
             row+=1
             col=0
         return board
