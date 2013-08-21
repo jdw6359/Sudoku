@@ -12,7 +12,7 @@ from Board import *
 
 class TestBasicFunctions(unittest.TestCase):
 
-    
+    #creates an empty board
     def setUp(self):
         self.board=Board()
 
@@ -57,7 +57,7 @@ def Basic_Functions_Suite():
 
 if __name__ =='__main__':
 
-    suite=suite()
+    suite=Basic_Functions_Suite()
     BasicRunner=unittest.TextTestRunner().run(suite)
 
     #unittest.main()
