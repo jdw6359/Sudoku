@@ -23,6 +23,13 @@ class Board:
             print("Row: "+str(row+1)+"\nCol: "+str(col+1)+"\nValue: "+str(value))
 
     """
+    Used to remove the non-None value from the row col location
+    """
+    def removeValue(self,row,col):
+        self.grid[row][col]=None
+
+        
+    """
     function is called, and will return a True boolean if the
     given value at the row,col is a valid move
     """
