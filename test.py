@@ -4,6 +4,7 @@ from unittest import *
 from TestBasicFunctions import *
 from TestValidationFunctions import *
 from TestReaderFunctions import *
+from TestWriterFunctions import * 
 
 
 #initizlize array of suites
@@ -13,7 +14,7 @@ suite_array=[]
 suite_array.append(Basic_Functions_Suite())
 suite_array.append(Validation_Functions_Suite())
 suite_array.append(Reader_Functions_Suite())
-
+suite_array.append(Writer_Functions_Suite())
 
 #run each suite
 for suite in suite_array:

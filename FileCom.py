@@ -29,6 +29,12 @@ class FileCom:
             row+=1
             col=0
         return board
+
+    def write(self,board,config_file):
+        pass
+        
+
+
     
             
         

@@ -1,5 +1,5 @@
 """
-Test Suite for FileCom Functionality
+Test Suite for Reader Functionality
 Author:Josh Woodward
 Date: 8/21/13
 """
